@@ -1,0 +1,709 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+:root {
+  --background_color: #FFFFFF;
+  --bold_font_color: #333333;
+  --normal_font_color: #575757;
+  --line_color: #CCCCCC;
+  --font-family: 'Open Sans', sans-serif;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body{
+ width: 90vw;
+ margin: 0 auto;
+ font-family: var(--font-family);
+}
+
+/* Organizar el header usando grid */
+
+header{
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 2fr;
+  grid-template-rows: 1.2fr 1fr;
+  gap: 1rem;
+}
+
+#logo{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Ocultar los elementos que no son relevantes en escalas de movil */
+header  h1, header  h2{
+  display: none;
+}
+
+/* Creando un menu burger para el menu principal */
+.menu_burger{
+  top: 15px;
+  position: relative;
+}
+
+#burger, .icon{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.icon{
+font-size: 20px;
+pointer-events: none;
+}
+
+#burger {
+  opacity: 0;
+}
+
+.menu{
+  display: none;
+}
+
+.fi-rr-cross{
+  display: none;
+}
+
+#burger:checked ~ .fi-sr-menu-burger {
+ display: none;
+}
+
+#burger:checked ~ .fi-rr-cross{
+  display: block;
+}
+
+#burger:checked ~ .menu{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 2rem;
+  background-color: var(--background_color);
+  width: 100vw;
+  z-index: 1;
+}
+
+.menu li{
+  list-style: none;
+  font-family: var(--font-family);
+  margin: 20px 0;
+}
+
+.menu a{
+  text-decoration: none;
+  color: var(--bold_font_color);
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.menu a img{
+  width: 20px;
+  height: 20px;
+}
+
+.menu a:hover{
+  color: var(--bold_font_color);
+  font-size: large;
+}
+
+/* Posicionar el resto de elementos del header */
+.logo{
+  display: flex;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+
+}
+
+.top_ul{
+  margin-left: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+}
+
+
+.top_ul li{
+  list-style: none;
+}
+
+
+.top_ul li img{
+  width: 20px;
+}
+
+.hidden{
+  display: none;
+}
+
+.bottom_navbar{
+  grid-column: 1 / span 3;
+  grid-row: 2 / 3;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  border-top: 1px solid var(--line_color);
+  position: relative;
+}
+
+#buscador{
+  width: 90%;
+  height: 30px;
+  border: 1px solid var(--line_color);
+  border-radius: 2px;
+  padding-left: 1rem;
+  outline: none;
+  
+}
+
+.fi-rr-search{
+  position: absolute;
+  top: 15px;
+  right: 50px;
+}
+
+/* Ordenar el main con flex */
+.top_main{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+img{
+  width: 100%;
+  border-radius: 12px;
+}
+
+.main_banner{
+  width: 100%;
+}
+
+.banner_large{
+  display: none;
+}
+
+.main_banner h2{
+  font-size: 0.9rem;
+  margin: 2rem auto 1.5rem;
+}
+
+.main_banner h2 span{
+  font-weight: 200;
+}
+
+.main_images{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.image{
+  width: 48%;
+  margin-top: 2rem;
+}
+
+.main_product p{
+  font-size: 0.8rem;
+  font-weight: bolder;
+  color: var(--bold_font_color);
+}
+
+/* Crear un elemento con scroll */
+.slider_main{
+  display: flex;
+  align-items: center;
+  margin-top: 3rem ;
+  gap: 3rem;
+  overflow-x: scroll;
+  border-bottom: 1px solid var(--line_color);
+  text-align: center;
+}
+
+
+.slider_main p{
+
+  color: var(--normal_font_color);
+}
+
+.slider_main img{
+  width: 90px;
+  height: 90px;
+}
+
+
+/* Ordenar el footer con flex */
+
+.footer_bottom{
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_bottom img{
+  height: 1rem;
+  width: 1rem;
+}
+
+.footer_list{
+  margin-top:0.5rem;
+
+}
+
+/* Crear burger para los elementos del footer */
+.footer_burger1{
+  position: relative;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line_color);
+}
+
+/* Lista 1 del footer */
+#footer_checkbox_burger1{
+  position: absolute;
+  top: 3px;
+  right: 5px;
+}
+
+#footer_checkbox_burger1{
+  opacity: 0;
+}
+
+.mas, .menos{
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  pointer-events: none;
+}
+
+.lista1{
+  display: none;
+  margin-top: 1rem ;
+}
+
+.lista1 li{
+  padding-bottom: 0.8rem;
+}
+
+footer a{
+  color: var(--normal_font_color);
+}
+
+.menos{
+  display: none;
+}
+
+#footer_checkbox_burger1:checked ~ .mas{
+  display: none;
+}
+
+#footer_checkbox_burger1:checked ~ .menos{
+  display: block;
+}
+
+#footer_checkbox_burger1:checked ~ .lista1{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background_color);
+  width: max-content;
+  z-index: 1;
+}
+
+/* lista 2 del footer */
+
+#footer_checkbox_burger2{
+  position: absolute;
+  top: 3px;
+  right: 5px;
+}
+
+#footer_checkbox_burger2{
+  opacity: 0;
+}
+
+.lista2{
+  display: none;
+  margin: 1rem;
+}
+
+.lista2 li{
+  padding-bottom: 0.8rem;
+}
+
+#footer_checkbox_burger2:checked ~ .mas{
+  display: none;
+}
+
+#footer_checkbox_burger2:checked ~ .menos{
+  display: block;
+}
+
+#footer_checkbox_burger2:checked ~ .lista2{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background_color);
+  width: max-content;
+  z-index: 1;
+}
+
+/* lista 3 del footer*/
+
+#footer_checkbox_burger3{
+  position: absolute;
+  top: 3px;
+  right: 5px;
+}
+
+#footer_checkbox_burger3{
+  opacity: 0;
+}
+
+.lista3{
+  display: none;
+  margin: 1rem;
+}
+
+.lista3 li{
+  padding-bottom: 0.8rem;
+}
+
+#footer_checkbox_burger3:checked ~ .mas{
+  display: none;
+}
+
+#footer_checkbox_burger3:checked ~ .menos{
+  display: block;
+}
+
+#footer_checkbox_burger3:checked ~ .lista3{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background_color);
+  width: max-content;
+  z-index: 1;
+}
+
+/*lista 4 del footer*/
+
+#footer_checkbox_burger4{
+  position: absolute;
+  top: 3px;
+  right: 5px;
+}
+
+#footer_checkbox_burger4{
+  opacity: 0;
+}
+
+.lista4{
+  display: none;
+  margin: 1rem;
+}
+
+.lista4 li{
+  padding-bottom: 0.8rem;
+}
+
+#footer_checkbox_burger4:checked ~ .mas{
+  display: none;
+}
+
+#footer_checkbox_burger4:checked ~ .menos{
+  display: block;
+}
+
+#footer_checkbox_burger4:checked ~ .lista4{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background_color);
+  width: max-content;
+  z-index: 1;
+}
+
+/* Copyright */
+h4{
+  margin-top: 1rem;
+  text-align: center;
+}
+
+
+/* Media para moviles y tablets entre 375px y 768px */
+
+@media (min-width: 375px) and (max-width: 768px){
+  
+  /* mostrar elementos de h2 del header que estaban ocultos */
+
+  header h2{
+    display: block;
+  }
+
+  .top_ul{
+    width: 200px;
+  }
+
+  /* mantener oculto el elemento del nav que no queremos */
+
+  .nav_list:not(.hidden){
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+  }
+
+  header h2{
+    font-size: 0.8rem;
+  }
+
+}
+
+/* Media para tablets y ordenadres entre 769px y 1200px */
+@media (min-width: 769px) and (max-width: 1200px){
+
+  /* Mostrar todos los elementos del header */
+.hidden, header h2{
+  display: block;
+  font-size: 0.8rem;
+}
+
+/* Cambiar el header a display grid y organizar sus elementos */
+header{
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: 1.2fr 1fr;
+}
+
+#logo{
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  scale: 1.2;
+  justify-content: flex-start;
+}
+
+.bottom_navbar{
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  align-items: center;
+}
+
+.fi-rr-search{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+#top_ul{
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
+}
+
+.top_ul{
+  display: flex;
+  margin-left: 0;
+  width: fit-content;
+  height: auto;
+  gap: 10px;
+  
+}
+
+.nav_list{
+  display: flex;
+  justify-content: space-around;
+}
+
+#menu_burger{
+  grid-column: 1 / span 3;
+  grid-row: 2 / 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--line_color);
+  border-bottom: 1px solid var(--line_color) ;
+}
+
+.menu_burger{
+  top: -10px;
+}
+
+/* Organizar el main con un cambio de imagen del banner por una alargada */
+
+.banner{
+    display: none;
+  }
+  .banner_large{
+    display: block;
+    width: 100%;
+  }
+
+  /* Cambiar la organizacion de las imagenes */
+
+  .main_images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .image{
+    width: 30%;
+    margin-top: 2rem;
+  }
+}
+
+/* Media para ordenadores de mas de 1200px */
+
+@media (min-width: 1201px) {
+ 
+  /* Mantener la estructura y cambios del media anterior en el header*/
+
+  .hidden, header h2{
+    display: block;
+    font-size: 0.8rem;
+  }
+  
+  header{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 1.2fr 1fr;
+  }
+  
+  #logo{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    scale: 1.2;
+    justify-content: flex-start;
+  }
+  
+  .bottom_navbar{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-items: center;
+  }
+  
+  .fi-rr-search{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+  }
+
+  #top_ul{
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+  }
+  
+  .top_ul{
+    display: flex;
+    margin-left: 0;
+    width: fit-content;
+    height: auto;
+    gap: 10px;
+    
+  }
+  
+  .nav_list{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  #menu_burger{
+    grid-column: 1 / span 3;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--line_color);
+    border-bottom: 1px solid var(--line_color) ;
+  }
+  
+  .menu_burger{
+    top: -10px;
+  }
+  
+  /* Cambiar la estructura de las imagenes en el main */
+  .banner{
+      display: none;
+    }
+    .banner_large{
+      display: block;
+      width: 100%;
+    }
+  
+    .main_images{
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 1rem;
+    }
+    
+    .image{
+      width: 30%;
+      margin-top: 2rem;
+    }
+
+    .slider_main{
+      justify-content: center; 
+      overflow-x: hidden;
+      padding-bottom: 1rem;
+    }  
+    
+    
+
+    /* Cambiar la estructura del footer a flex */
+
+    .footer_ul{
+      display: flex;
+      justify-content: space-around;
+      margin: 1rem 0;
+    }
+
+    /* lista 1 del footer */
+    #footer_checkbox_burger1{
+      position: absolute;
+      top: 5px;
+      right: -20px;
+    }
+    
+    .mas, .menos{
+      position: absolute;
+      top: 5px;
+      right: -20px;
+      pointer-events: none;
+    }
+
+    /* lista 2 del footer*/
+    #footer_checkbox_burger2{
+      position: absolute;
+      top: 5px;
+      right: -20px;
+    }
+    
+    /* lista 3 del footer*/
+    #footer_checkbox_burger3{
+      position: absolute;
+      top: 5px;
+      right: -20px;
+    }
+
+    /* lista 4 del footer*/
+    #footer_checkbox_burger4{
+      position: absolute;
+      top: 5px;
+      right: -20px;
+    }
+  }
